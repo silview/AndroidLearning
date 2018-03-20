@@ -8,13 +8,11 @@ import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
-import com.silview.androidlearning.R;
-
 import java.lang.reflect.Field;
 
 //TextView控件基础
 public class TextViewActivity extends AppCompatActivity {
-
+    private TextView mTextView;
     private TextView myTextView1;
     private TextView myTextView2;
 
@@ -23,6 +21,7 @@ public class TextViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_view);
 
+        mTextView = findViewById(R.id.textView);
         myTextView1 = findViewById(R.id.textView1);
         myTextView2 = findViewById(R.id.textView2);
 
@@ -78,6 +77,21 @@ public class TextViewActivity extends AppCompatActivity {
 
         myTextView1.setText(charSequence1);
         myTextView1.setMovementMethod(LinkMovementMethod.getInstance());
+
+
+
+        String text1 = "显示TextViewActivity";
+//        SpannableString spannableString = new SpannableString(text1);
+//        spannableString.setSpan(new ClickableSpan() {
+//            @Override
+//            public void onClick(View widget) {
+////                Intent intent = new Intent(TextViewActivity.this,MainActivity.class);
+////                startActivity(intent);
+//            }
+//        },0,text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//
+//        mTextView.setText(spannableString);
+//        mTextView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
 

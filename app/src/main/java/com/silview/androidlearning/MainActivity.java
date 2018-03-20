@@ -3,12 +3,8 @@ package com.silview.androidlearning;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Button;
 
     /*Android Studio实用快捷键
     *                                           查看
@@ -64,28 +60,26 @@ import android.widget.TextView;
     *   Ctrl + F4           关闭当前窗口
     * */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private TextView mTextView;
+    private Button mButton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mTextView = findViewById(R.id.textview);
 
-        String text = "显示TextViewActivity";
-
-        SpannableString spannableString = new SpannableString(text);
-        spannableString.setSpan(new ClickableSpan() {
-            @Override
-            public void onClick(View widget) {
-                Intent intent = new Intent(MainActivity.this,TextViewActivity.class);
-                startActivity(intent);
-            }
-        },0,text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        mTextView.setText(spannableString);
-        mTextView.setMovementMethod(LinkMovementMethod.getInstance());
+        mButton = findViewById(R.id.textviewbutton);
+        mButton.setOnClickListener(this);
 
     }
+
+    @Override
+    public void onClick(View v) {
+//        mButton.setText("你已经被点击了！");
+        Intent intent = new Intent(MainActivity.this,TextViewActivity.class);
+        startActivity(intent);
+    }
+
 }
