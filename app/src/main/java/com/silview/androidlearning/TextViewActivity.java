@@ -1,6 +1,7 @@
 package com.silview.androidlearning;
 
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
@@ -8,6 +9,8 @@ import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
 import com.silview.androidlearning.R;
+
+import java.lang.reflect.Field;
 
 //TextView控件基础
 public class TextViewActivity extends AppCompatActivity {
@@ -51,8 +54,41 @@ public class TextViewActivity extends AppCompatActivity {
         myTextView2.setText(text);
         myTextView2.setMovementMethod(LinkMovementMethod.getInstance());
 
-        // 使用<img>标签在TextView控件中实现图文混合效果
-        // Key-Value模式装载图像
+//        使用<img>标签在TextView控件中实现图文混排效果
+//        Key-Value模式装载图像,设计getResourceId方法实现
+        String html = "图像1<img src='image1'/>图像2<img src='image2'/>";
+        html += "图像3<img src='image3'/><p>";
+        html += "图像4<a href='http://www.silview.com'><img src='image4'></a>";
+        html += "图像5<img src='image5'/>";
 
+        CharSequence charSequence1 = Html.fromHtml(html, new Html.ImageGetter() {
+            @Override
+            public Drawable getDrawable(String source) {
+                System.out.println(source);
+                Drawable drawable = getResources().getDrawable(getResourceId(source),null);
+                if (source.equals("image3")){
+                    drawable.setBounds(0,0,drawable.getIntrinsicWidth()/2,drawable.getIntrinsicHeight()/2);
+                }
+                else {
+                    drawable.setBounds(0,0,drawable.getIntrinsicWidth(),drawable.getIntrinsicHeight());
+                }
+                return drawable;
+            }
+        }, null);
+
+        myTextView1.setText(charSequence1);
+        myTextView1.setMovementMethod(LinkMovementMethod.getInstance());
+    }
+
+
+    private int getResourceId (String name){
+        try {
+            Field field = R.drawable.class.getField(name);
+            return Integer.parseInt(field.get(null).toString());
+        }
+        catch (Exception e){
+
+        }
+        return 0;
     }
 }
