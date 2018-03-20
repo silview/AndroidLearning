@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidLearning</string>
+    <string name="textView1">TextView演示1</string>
+    <string name="textView2">TextView演示2</string>
 </resources>
