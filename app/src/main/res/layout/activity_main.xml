@@ -7,14 +7,23 @@
     tools:context="com.silview.androidlearning.MainActivity">
 
     <Button
-        android:id="@+id/textviewbutton"
-        android:layout_width="wrap_content"
+        android:id="@+id/buttontextview"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:onClick="onClick"
         android:text="TextViewActivity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ButtonListener"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="ListenerActivity"
+        app:layout_constraintEnd_toEndOf="@+id/buttontextview"
+        app:layout_constraintStart_toStartOf="@+id/buttontextview"
+        app:layout_constraintTop_toBottomOf="@+id/buttontextview" />
 
 </android.support.constraint.ConstraintLayout>

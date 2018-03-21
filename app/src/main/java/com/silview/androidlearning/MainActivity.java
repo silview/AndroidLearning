@@ -62,7 +62,9 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button mButton;
+    private Button mButtonTextViewActivity;
+    private Button mButtonListenerActivity;
+
 
 
     @Override
@@ -70,16 +72,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mButton = findViewById(R.id.textviewbutton);
-        mButton.setOnClickListener(this);
+        mButtonTextViewActivity = findViewById(R.id.buttontextview);
+        mButtonTextViewActivity.setOnClickListener(this);
+
+        mButtonListenerActivity = findViewById(R.id.ButtonListener);
+        mButtonListenerActivity.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
-//        mButton.setText("你已经被点击了！");
-        Intent intent = new Intent(MainActivity.this,TextViewActivity.class);
-        startActivity(intent);
+        switch (v.getId()){
+            case R.id.buttontextview :
+                Intent intent1 = new Intent(MainActivity.this,TextViewActivity.class);
+                startActivity(intent1);
+            case R.id.ButtonListener :
+                Intent intent2 = new Intent(MainActivity.this,ListenerActivity.class);
+                startActivity(intent2);
+        }
+
     }
+
 
 }
