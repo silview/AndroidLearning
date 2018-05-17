@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".TextViewActivity" />
-        <activity android:name=".ListenerActivity"></activity>
+        <activity android:name=".ListenerActivity" />
+        <activity android:name=".EditTextActivity" />
+        <activity android:name=".RadioButtonActivity"></activity>
     </application>
 
 </manifest>

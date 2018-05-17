@@ -18,10 +18,10 @@ public class ListenerActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listener);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_listener);
 
-        mbutton1 = findViewById(R.id.button1);
+        mbutton1 = findViewById(R.id.button);
         mbutton1.setOnClickListener(this);
         mbutton1.setOnTouchListener(this);
         mbutton1.setOnKeyListener(this);

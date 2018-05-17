@@ -12,18 +12,38 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="TextViewActivity"
+        android:text="@string/textviewactivity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/ButtonListener"
+        android:id="@+id/buttonListener"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="ListenerActivity"
+        android:text="@string/listeneractivity"
         app:layout_constraintEnd_toEndOf="@+id/buttontextview"
         app:layout_constraintStart_toStartOf="@+id/buttontextview"
         app:layout_constraintTop_toBottomOf="@+id/buttontextview" />
+
+    <Button
+        android:id="@+id/buttonEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/edittextactivity"
+        app:layout_constraintEnd_toEndOf="@+id/buttontextview"
+        app:layout_constraintStart_toStartOf="@+id/buttontextview"
+        app:layout_constraintTop_toBottomOf="@+id/buttonListener" />
+
+    <Button
+        android:id="@+id/buttonRadioButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/radiobutton"
+        app:layout_constraintEnd_toEndOf="@+id/buttontextview"
+        app:layout_constraintStart_toStartOf="@+id/buttontextview"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEditText" />
 
 </android.support.constraint.ConstraintLayout>

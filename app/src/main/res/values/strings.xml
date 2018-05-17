@@ -2,4 +2,13 @@
     <string name="app_name">AndroidLearning</string>
     <string name="textView1">TextView演示1</string>
     <string name="textView2">TextView演示2</string>
+    <string name="title_activity_radio_button">RadioButtonActivity</string>
+    <string name="_1">选项1</string>
+    <string name="_2">选项2</string>
+    <string name="_3">选项3</string>
+    <string name="textviewactivity">TextViewActivity</string>
+    <string name="listeneractivity">ListenerActivity</string>
+    <string name="edittextactivity">EditTextActivity</string>
+    <string name="radiobutton">RadioButton</string>
+    <string name="button1">用户的选择</string>
 </resources>

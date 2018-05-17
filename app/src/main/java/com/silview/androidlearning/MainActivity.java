@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button mButtonTextViewActivity;
     private Button mButtonListenerActivity;
-
-
+    private Button mButtonEditTextActivity;
+    private Button mButtonRadioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,8 +75,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mButtonTextViewActivity = findViewById(R.id.buttontextview);
         mButtonTextViewActivity.setOnClickListener(this);
 
-        mButtonListenerActivity = findViewById(R.id.ButtonListener);
+        mButtonListenerActivity = findViewById(R.id.buttonListener);
         mButtonListenerActivity.setOnClickListener(this);
+
+        mButtonEditTextActivity = findViewById(R.id.buttonEditText);
+        mButtonEditTextActivity.setOnClickListener(this);
+
+        mButtonRadioButton = findViewById(R.id.buttonRadioButton);
+        mButtonRadioButton.setOnClickListener(this);
 
     }
 
@@ -86,9 +92,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.buttontextview :
                 Intent intent1 = new Intent(MainActivity.this,TextViewActivity.class);
                 startActivity(intent1);
-            case R.id.ButtonListener :
+                break;
+            case R.id.buttonListener:
                 Intent intent2 = new Intent(MainActivity.this,ListenerActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.buttonEditText :
+                Intent intent3 = new Intent(MainActivity.this,EditTextActivity.class);
+                startActivity(intent3);
+                break;
+            case R.id.buttonRadioButton:
+                Intent intent4 = new Intent(MainActivity.this,RadioButtonActivity.class);
+                startActivity(intent4);
+                break;
+             default:
+                 break;
         }
 
     }
