@@ -16,7 +16,7 @@ public class RadioButtonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_radio_button);
 
-        mButton = findViewById(R.id.button);
+        mButton = findViewById(R.id.buttonCheckBox);
         mRadioGroup = findViewById(R.id.radioGroup1);
     }
 

@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mButtonListenerActivity;
     private Button mButtonEditTextActivity;
     private Button mButtonRadioButton;
+    private Button mBottonCheckBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +84,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mButtonRadioButton = findViewById(R.id.buttonRadioButton);
         mButtonRadioButton.setOnClickListener(this);
+
+        mBottonCheckBox = findViewById(R.id.buttonCheckBox);
+        mBottonCheckBox.setOnClickListener(this);
 
     }
 
@@ -105,6 +109,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent4 = new Intent(MainActivity.this,RadioButtonActivity.class);
                 startActivity(intent4);
                 break;
+            case R.id.buttonCheckBox:
+                Intent intent5 = new Intent(MainActivity.this,CheckBoxActivity.class);
+                startActivity(intent5);
              default:
                  break;
         }

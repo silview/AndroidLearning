@@ -21,7 +21,7 @@ public class ListenerActivity extends AppCompatActivity implements View.OnClickL
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_listener);
 
-        mbutton1 = findViewById(R.id.button);
+        mbutton1 = findViewById(R.id.buttonCheckBox);
         mbutton1.setOnClickListener(this);
         mbutton1.setOnTouchListener(this);
         mbutton1.setOnKeyListener(this);
